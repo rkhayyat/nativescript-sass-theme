@@ -1,0 +1,50 @@
+@import 'app-common';
+@import '~nativescript-theme-core/scss/platforms/index.android';
+@import 'variable.scss';
+
+
+@function themed($key) {
+    @return map-get($theme-map, $key);
+}
+
+
+@mixin themify($themes) {
+    @each $theme, $map in $themes {
+      .theme-#{$theme} & {
+        $theme-map: () !global;
+        @each $key, $submap in $map {
+          $value: map-get(map-get($themes, $theme), '#{$key}');
+          $theme-map: map-merge($theme-map, ($key: $value)) !global;
+        }
+        @content;
+        $theme-map: null !global;
+      }
+    }
+  }
+  
+      .btn {
+        border-color: blue;
+        color:white;
+        background-color: $btn-color;
+        border-width: 3px;
+        padding: 10px;
+        font-size: 30;
+
+        @include themify($themes) {
+            background-color: themed('backgroundColor');  
+            border-radius: themed('borderRadius');  
+          }
+      }
+
+      .h1 {
+        @include themify($themes) {
+            color: themed('h1Color');  
+          }
+
+        }
+          .h2 {
+            @include themify($themes) {
+                color: themed('h2Color');  
+              }
+            }
+  
