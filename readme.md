@@ -1,7 +1,7 @@
 [![twitter: @rakhayyat](https://img.shields.io/badge/twitter-%40rakhayyat-2F98C1.svg)](https://twitter.com/rakhayyat)
 
 <p align="center">
-  <img src="https://github.com/rkhayyat/nativescript-sass-theme/blob/master/screenshot/nativescript-theme.gif" width="100"/>
+  <img src="https://github.com/rkhayyat/nativescript-sass-theme/blob/master/screenshot/nativescript-theme.gif" width="300"/>
 </p>
 
 # Custom multiple-themes for NativeScript:
